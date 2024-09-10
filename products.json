@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "Lisandro Martines",
+    "price": 20000.4,
+    "honorarуСode": 245,
+    "state": "inStock"
+  },
+  {
+    "id": 2,
+    "name": "Bruno Fernandes",
+    "price": 20000.4,
+    "honorarуСode": 245,
+    "state": "forSale"
+  }
+]
+
+
+//  {
+//    "id": 1,
+//    "name": "Renault Magnum",
+//    "driver": {
+//      "id": "drv-2",
+//      "name": "Vasya",
+//      "ifFree": true
+//    },
+//    "state": "base"
+//  },
