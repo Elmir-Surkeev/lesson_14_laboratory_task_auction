@@ -1,7 +1,12 @@
 package elmir.kg;
 
+import java.util.Arrays;
+
 public class Action {
     public static void startProgramm() {
-        System.out.println("Start");
+        Product[] products = JSONFileHandler.getProducts();
+        while (true){
+            System.out.println(Arrays.toString(products));
+        }
     }
 }

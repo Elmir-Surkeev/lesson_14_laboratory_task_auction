@@ -9,6 +9,13 @@ public class inStock extends State {
 
     @Override
     public void startSale(Product product) throws Exception {
+        try {
+            Product[] products = JSONFileHandler.getProducts();
+            System.out.println("Товар выставлен на продажу");
+            product.setState("forSale");
+        }catch (Exception e){
+            throw new Exception("Возникла ошибка");
+        }
         //Метод startSale - изменит состояние товара на "for_sale", и вернёт сообщение об успешном
         //начале торгов.
     }

@@ -13,16 +13,13 @@
     "honorarуСode": 245,
     "state": "forSale"
   }
+,
+  {
+    "id": 3,
+    "name": "Hacan Chalhonaglue",
+    "price": 243.4,
+    "honorarуСode": 212,
+    "state": "alreadySolded"
+  }
 ]
 
-
-//  {
-//    "id": 1,
-//    "name": "Renault Magnum",
-//    "driver": {
-//      "id": "drv-2",
-//      "name": "Vasya",
-//      "ifFree": true
-//    },
-//    "state": "base"
-//  },
