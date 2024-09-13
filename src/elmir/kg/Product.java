@@ -4,10 +4,10 @@ public class Product {
     private int id;
     private String name;
     private double price;
-     private String honoraryCode;
-     private String state;
-     private transient State productState;
-     public int getId() {
+    private String honoraryCode;
+    private String state;
+    private transient State productState;
+    public int getId() {
         return id;
     }
 
@@ -91,4 +91,20 @@ public class Product {
     }
     public void setState(String state) {
          this.state = state;
-}   }
+    }
+    @Override
+    public String toString() {
+        String stateName = productState != null ? productState.getClass().getSimpleName() : "null";
+        return String.format("| %-5d | %-20s | %-10.2f | %-15s | %-10s | %-30s | \n",
+                id, name, price, honoraryCode , state, stateName);
+//            return  " \n"+
+//                    "" + (id) +
+//                    "" + name  +
+//                    "" + price +
+//                    "" + honoraryCode +
+//                    ""+
+//                    "" + state+
+//                    " _________________________________";
+//        }
+    }
+}
