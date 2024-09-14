@@ -4,7 +4,7 @@ public class inStock extends State {
 
     @Override
     public void raisePrice(Product product) throws Exception {
-        System.out.println("Ошибка. Так как товар на данный момент на складе "+ "\n" +" Он не может учавствовать в торгах");
+        throw new Exception("Ошибка. Так как товар на данный момент на складе "+ "\n" +" Он не может учавствовать в торгах");
     }
 
     @Override

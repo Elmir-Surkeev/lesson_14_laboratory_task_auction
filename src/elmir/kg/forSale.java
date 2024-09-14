@@ -6,15 +6,20 @@ public class forSale extends State{
     public void raisePrice(Product product) throws Exception {
         try {
             Product[] products = JSONFileHandler.getProducts();
-            for (Product t : products ) {
-                if(t.getId()== product.getPrice()){
-                    t.setPrice(t.getPrice()+50);
+
+            if (products == null) {
+                throw new Exception("Список продуктов пустой или не был загружен.");
+            }
+
+            for (Product t : products) {
+                if (t.getId() == product.getId()) { // Сравнение по идентификатору, а не по цене
+                    t.setPrice(t.getPrice() + 50);
+                    JSONFileHandler.writeProducts(products);
                     break;
                 }
             }
-        }
-        catch (Exception e){
-            throw new Exception("Возникли проблемы");
+        } catch (Exception e) {
+            throw new Exception("Возникли проблемы", e);
         }
         // Метод raisePrice - поднимет цену на товар на фиксированное значение и вернёт сообщение
         //об успешном повышении цены.
