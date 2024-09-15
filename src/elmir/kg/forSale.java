@@ -12,22 +12,22 @@ public class forSale extends State{
             }
 
             for (Product t : products) {
-                if (t.getId() == product.getId()) { // Сравнение по идентификатору, а не по цене
+                if (t.getId() == product.getId()) {
                     t.setPrice(t.getPrice() + 50);
-                    JSONFileHandler.writeProducts(products);
+                    System.out.println("Цена была увеличена, текущая цена составляет: " + t.getPrice());
                     break;
                 }
             }
+
+            JSONFileHandler.writeProducts(products);
         } catch (Exception e) {
-            throw new Exception("Возникли проблемы", e);
+            throw new Exception("Возникли проблемы при повышении цены", e);
         }
-        // Метод raisePrice - поднимет цену на товар на фиксированное значение и вернёт сообщение
-        //об успешном повышении цены.
     }
 
     @Override
     public void startSale(Product product) throws Exception {
-        System.out.println("Товар уже участвует в торгах");
+        throw new Exception("Товар уже участвует в торгах");
     }
 
 

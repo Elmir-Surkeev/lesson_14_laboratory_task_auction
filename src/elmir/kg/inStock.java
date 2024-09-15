@@ -22,12 +22,12 @@ public class inStock extends State {
 
     @Override
     public void giveToWinner(Product product) throws Exception {
-        System.out.println("Товар находится на складе нельзя будет сразу, отдать товар со склада");
+        throw new Exception("Товар находится на складе нельзя будет сразу, отдать товар со склада");
     }
 
     @Override
     public void withDraw(Product product) throws Exception {
-        System.out.println("Нельзя снят товар с торгах, так как товар находится в складе "+"\n"
+        throw new Exception("Нельзя снят товар с торгах, так как товар находится в складе "+"\n"
                             + "Товар на складе не учавствует в торгах");
     }
 

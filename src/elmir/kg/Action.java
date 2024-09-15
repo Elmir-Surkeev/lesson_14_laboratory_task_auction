@@ -56,16 +56,18 @@ public class Action {
                     try {
                         product.getProductState().startSale(product);
                     } catch (Exception e) {
-                        System.out.println("Ошибка при выставлении на аукцион.");
+                        throw new RuntimeException(e);
                     }
                     break;
-//                case 2:
-//                    if (product.getProductState() != null) {
-//                        product.getProductState().raisePrice(product);
-//                    } else {
-//                        System.out.println("Ошибка: состояние товара не установлено.");
-//                    }
-//                    break;
+                case 2:
+                    try {
+                        product.getProductState().raisePrice(product);
+                        JSONFileHandler.writeProducts(products);
+                        System.out.println("Успешно изменилась цена");
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
                 case 3:
                     try {
                         CodeGenerator generator = new CodeGenerator();
@@ -78,21 +80,21 @@ public class Action {
                         }
                         product.getProductState().giveToWinner(product);
                     } catch (Exception e) {
-                        System.out.println("Ошибка при выдаче победителю.");
+                        throw new RuntimeException(e);
                     }
                     break;
                 case 4:
                     try {
                         product.getProductState().withDraw(product);
                     } catch (Exception e) {
-                        System.out.println("Ошибка при снятии с торгов.");
+                        throw new RuntimeException(e);
                     }
                     break;
                 case 5:
                     try {
                         System.out.println(product.toString());
                     } catch (Exception e) {
-                        System.out.println("Ошибка при выводе информации.");
+                        throw new RuntimeException(e);
                     }
                     break;
                 default:
