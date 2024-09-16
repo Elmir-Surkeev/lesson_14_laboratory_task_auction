@@ -5,7 +5,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Action {
-    public static void startProgramm(){
+    public static void startProgramm() throws RuntimeException {
+        System.out.println("     id   |"+ "          name        |"+"    price   |"+"      code       |"+"  state "+"    |lastState             |");
+        System.out.println("__________|______________________|____________|_________________|____________|______________________|");
         Product[] products = JSONFileHandler.getProducts();
         Scanner scanner = new Scanner(System.in);
 
@@ -56,7 +58,7 @@ public class Action {
                     try {
                         product.getProductState().startSale(product);
                     } catch (Exception e) {
-                        throw new RuntimeException(e);
+                       System.out.println(e.getMessage());
                     }
                     break;
                 case 2:
@@ -64,7 +66,7 @@ public class Action {
                         product.getProductState().raisePrice(product);
                         System.out.println("Успешно изменилась цена");
                     } catch (Exception e) {
-                        throw new RuntimeException(e);
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 3:
@@ -79,21 +81,21 @@ public class Action {
                         }
                         product.getProductState().giveToWinner(product);
                     } catch (Exception e) {
-                        throw new RuntimeException(e);
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 4:
                     try {
                         product.getProductState().withDraw(product);
                     } catch (Exception e) {
-                        throw new RuntimeException(e);
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case 5:
                     try {
                         System.out.println(product.toString());
                     } catch (Exception e) {
-                        throw new RuntimeException(e);
+                        System.out.println(e.getMessage());
                     }
                     break;
                 default:

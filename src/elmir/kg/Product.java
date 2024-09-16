@@ -96,7 +96,7 @@ public class Product {
     @Override
     public String toString() {
         String stateName = (productState != null) ? productState.getClass().getSimpleName() : "State not set";
-        return String.format("| %-5d | %-20s | %-10.2f | %-15s | %-10s | %-30s | \n",
+        return String.format("| %-5d | %-20s | %-10.2f | %-15s | %-10s | %-20s | \n",
                 id, name, price, honoraryCode, state, stateName);
     }
 

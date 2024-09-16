@@ -27,8 +27,8 @@ public class InStock extends State {
 
     @Override
     public void withDraw(Product product) throws Exception {
-        throw new Exception("Нельзя снят товар с торгах, так как товар находится в складе "+"\n"
-                            + "Товар на складе не учавствует в торгах");
+        throw new Exception("Нельзя снять товар с торгах, так как товар находится в складе "+"\n"
+                            + "Товар на складе не участвует в торгах");
     }
 
 }

@@ -62,7 +62,7 @@ public class ForSale extends State{
     public void giveToWinner(Product product) throws Exception {
         try {
             Product[] products = JSONFileHandler.getProducts();
-            product.setState("alreadySolded");
+            product.setState("Sold");
 
             if (product.getPrice() == 0){
                 System.out.println("Нельзя отдать товар бесплатно");
