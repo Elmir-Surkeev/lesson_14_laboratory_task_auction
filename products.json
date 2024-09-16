@@ -1,1 +1,20 @@
-[{"id":1,"name":"Lisandro Martinnnnnes","price":20100.4,"state":"alreadySolded"},{"id":2,"name":"Bruno Fernandes","price":20000.4,"state":"forSale"},{"id":3,"name":"Hacan Chalhonaglue","price":500.4,"state":"inStock"}]
+[
+  {
+    "id": 1,
+    "name": "Lisandro Martinnnnnes",
+    "price": 20200.4,
+    "state": "inStock"
+  },
+  {
+    "id": 2,
+    "name": "Bruno Fernandes",
+    "price": 20200.4,
+    "state": "inStock"
+  },
+  {
+    "id": 3,
+    "name": "Hacan Chalhonaglue",
+    "price": 600.4,
+    "state": "inStock"
+  }
+]

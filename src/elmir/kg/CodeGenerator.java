@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class CodeGenerator {
+public class CodeGenerator{
     public String makeCode(String input){
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
@@ -23,4 +23,5 @@ public class CodeGenerator {
                 .mapToObj(Integer::toHexString)
                 .collect(Collectors.joining());
     }
+
 }

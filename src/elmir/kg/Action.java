@@ -71,14 +71,6 @@ public class Action {
                     break;
                 case 3:
                     try {
-                        CodeGenerator generator = new CodeGenerator();
-                        if (product.getPrice() >= 1000){
-                            generator.makeCode("GOLD-" + product.getId());
-                        }else if (product.getPrice()>500 && product.getPrice()<1000) {
-                            generator.makeCode("Silver-" + product.getId());
-                        }else {
-                            generator.makeCode("Bronze-" + product.getId());
-                        }
                         product.getProductState().giveToWinner(product);
                     } catch (Exception e) {
                         System.out.println(e.getMessage());

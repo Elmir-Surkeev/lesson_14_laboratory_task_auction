@@ -61,12 +61,39 @@ public class ForSale extends State{
     @Override
     public void giveToWinner(Product product) throws Exception {
         try {
-            Product[] products = JSONFileHandler.getProducts();
-            product.setState("Sold");
-
             if (product.getPrice() == 0){
                 System.out.println("Нельзя отдать товар бесплатно");
             }
+
+
+            Product[] products = JSONFileHandler.getProducts();
+            product.setState("Sold");
+
+            CodeGenerator generator = new CodeGenerator();
+//            for (Product product1 : products) {
+//                if (product1.getPrice() >= 1000) {
+//                    generator.makeCode("GOLD-" + product1.getId());
+//                    break;
+//                }
+//                else if (product1.getPrice()>500 && product1.getPrice()<1000) {
+//                    generator.makeCode("Silver-" + product1.getId());
+//                }else {
+//                    generator.makeCode("Bronze-" + product1.getId());
+//                }
+//            }
+            CodeGenerator generator1 = new CodeGenerator();
+
+            for (Product t : products) {
+                if (t.getPrice() >= 1000) {
+                    JSONFileHandler.writeProducts(product.setHonoraryCode(generator1.makeCode("Gold-" + t.getId())));
+                    break;
+                } else if (t.getPrice() > 500 && t.getPrice() < 1000) {
+                    JSONFileHandler.writeProducts(product.setHonoraryCode(generator1.makeCode("Silver-" + t.getId())));
+                } else {
+                    JSONFileHandler.writeProducts(product.setHonoraryCode(generator1.makeCode("Bronze-" + t.getId())));
+                }
+            }
+            JSONFileHandler.writeProducts(products);
         }
         catch (Exception e){
             throw new Exception("Возникла ошибка");

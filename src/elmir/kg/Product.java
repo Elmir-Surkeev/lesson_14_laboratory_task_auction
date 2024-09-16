@@ -36,10 +36,29 @@ public class Product {
         return honoraryCode;
     }
 
-    public void setHonoraryCode(String honoraryCode) {
+    public Product[] setHonoraryCode(String honoraryCode) {
         this.honoraryCode = honoraryCode;
+        return new Product[0];
     }
-
+//    public  class CodeGenerator{
+//        public String makeCode(String input){
+//            try {
+//                MessageDigest md = MessageDigest.getInstance("MD5");
+//                return convertToString(md.digest(input.getBytes()));
+//            }
+//            catch (NoSuchAlgorithmException e){
+//                e.printStackTrace();
+//            }
+//            return "";
+//        }
+//        private String convertToString(byte[] array){
+//            return IntStream.range(0, array.length/4)
+//                    .map(i -> array[i])
+//                    .map(i -> (i<0)?i+127:i)
+//                    .mapToObj(Integer::toHexString)
+//                    .collect(Collectors.joining());
+//        }
+//    }
     public String getState() {
         return state;
     }
