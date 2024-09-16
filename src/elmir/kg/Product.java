@@ -27,8 +27,9 @@ public class Product {
         return price;
     }
 
-    public void setPrice(double price) {
+    public Product[] setPrice(double price) {
         this.price = price;
+        return new Product[0];
     }
 
     public String getHonoraryCode() {
@@ -84,9 +85,9 @@ public class Product {
 
     public void setProductState(){
          switch (this.state){
-             case "inStock" -> this.productState = new inStock();
-             case "alreadySolded" -> this.productState = new alreadySolded();
-             case "forSale" -> this.productState = new forSale();
+             case "inStock" -> this.productState = new InStock();
+             case "alreadySolded" -> this.productState = new AlreadySolded();
+             case "forSale" -> this.productState = new ForSale();
          }
     }
     public void setState(String state) {
@@ -94,17 +95,22 @@ public class Product {
     }
     @Override
     public String toString() {
-        String stateName = productState != null ? productState.getClass().getSimpleName() : "null";
+        String stateName = (productState != null) ? productState.getClass().getSimpleName() : "State not set";
         return String.format("| %-5d | %-20s | %-10.2f | %-15s | %-10s | %-30s | \n",
-                id, name, price, honoraryCode , state, stateName);
-//            return  " \n"+
-//                    "" + (id) +
-//                    "" + name  +
-//                    "" + price +
-//                    "" + honoraryCode +
-//                    ""+
-//                    "" + state+
-//                    " _________________________________";
-//        }
+                id, name, price, honoraryCode, state, stateName);
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

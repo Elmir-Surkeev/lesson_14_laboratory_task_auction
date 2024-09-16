@@ -8,5 +8,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="google.code.gson" level="project" />
+    <orderEntry type="library" name="firstbird.backbone.gson_2.12" level="project" />
   </component>
 </module>

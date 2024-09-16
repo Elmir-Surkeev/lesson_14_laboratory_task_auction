@@ -62,7 +62,6 @@ public class Action {
                 case 2:
                     try {
                         product.getProductState().raisePrice(product);
-                        JSONFileHandler.writeProducts(products);
                         System.out.println("Успешно изменилась цена");
                     } catch (Exception e) {
                         throw new RuntimeException(e);
