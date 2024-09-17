@@ -47,53 +47,35 @@ public class Action {
                 scanner.next();
                 continue;
             }
-
-            switch (toDo) {
-                case 0:
-                    System.out.println("Выход из программы.");
-                    JSONFileHandler.writeProducts(products);
-                    scanner.close();
-                    return;
-                case 1:
-                    try {
-                        product.getProductState().startSale(product);
-                    } catch (Exception e) {
-                       System.out.println(e.getMessage());
+            try{
+                switch (toDo) {
+                    case 0:
+                        System.out.println("Выход из программы.");
+                        JSONFileHandler.writeProducts(products);
+                        scanner.close();
+                        return;
+                    case 1:
+                            product.getProductState().startSale(product);
+                        break;
+                    case 2:
+                            product.getProductState().raisePrice(product);
+                            System.out.println("Успешно изменилась цена");
+                        break;
+                    case 3:
+                            product.getProductState().giveToWinner(product);
+                        break;
+                    case 4:
+                            product.getProductState().withDraw(product);
+                        break;
+                    case 5:
+                            System.out.println(product.toString());
+                        break;
+                    default:
+                        System.out.println("Ошибка: Неверное действие.");
                     }
-                    break;
-                case 2:
-                    try {
-                        product.getProductState().raisePrice(product);
-                        System.out.println("Успешно изменилась цена");
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
-                case 3:
-                    try {
-                        product.getProductState().giveToWinner(product);
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
-                case 4:
-                    try {
-                        product.getProductState().withDraw(product);
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
-                case 5:
-                    try {
-                        System.out.println(product.toString());
-                    } catch (Exception e) {
-                        System.out.println(e.getMessage());
-                    }
-                    break;
-                default:
-                    System.out.println("Ошибка: Неверное действие.");
+            }catch (Exception e) {
+                System.out.println(e.getMessage());
             }
-            JSONFileHandler.writeProducts(products);
         }
     }
 }
